@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <div id="cart">
+
+        </div>
+    </div>
+    <script>
+        const cart = document.querySelector('#cart');
+
+        let resultCart = [];
+        let emptyBasket = '<p>Ваша корзина пуста</p>';
+
+        function Item(product, image, price, quantity) {
+            this.product = product;
+            this.price = price;
+            this.quantity = quantity
+        }
+
+        resultCart.push(
+            new Item('item_1', 'Image1', 95, 2)
+        );
+        resultCart.push(
+            new Item('item_2', 'Image2', 17, 5)
+        );
+        resultCart.push(
+            new Item('item_3', 'Image3', 15, 6)
+        );
+        resultCart.push(
+            new Item('item_4', 'Image4', 32, 1)
+        );
+        resultCart.push(
+            new Item('item_5', 'Image5', 22, 3)
+        );
+
+
+        if (resultCart == 0) {
+            cart.insertAdjacentHTML('beforeend', `<div class="prod_item total">${emptyBasket}</div>`);
+        } else {
+            for (const numb of resultCart) {
+                cart.insertAdjacentHTML('beforeend',
+                    `<div class="prod_item">
+        <span>Товар - ${numb.product}</span> 
+        <span>Цена товара - ${numb.price} руб</span>
+        <span>Количество - ${numb.quantity}</span>
+        </div>`);
+            }
+        }
+
+
+        function sumitem(resultCart) {
+            return resultCart.reduce(function (acc, resultCart) {
+                return acc + resultCart.quantity
+            }, 0)
+        };
+
+        function finalCost(resultCart) {
+            return resultCart.reduce(function (acc, resultCart) {
+                return acc + (resultCart.price * resultCart.quantity)
+            }, 0)
+        };
+
+        if (resultCart != 0) {
+            const resultPrice = cart.insertAdjacentHTML('beforeend',
+                `<div class="prod_item total">В корзине: ${sumitem(resultCart)} товаров на сумму 
+    ${finalCost(resultCart)} рублей</div>`);
+        }
+    </script>
+
+</body>
+
+</html>

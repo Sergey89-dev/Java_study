@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Chess</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="ChessPlay" id="chess">
+        <script>
+            var ChessPlay = document.querySelector(".ChessPlay");
+            ChessPlay.style.background = "white";
+            ChessPlay.style.width = "660px";
+            ChessPlay.style.height = "660px";
+            ChessPlay.style.paddingLeft = "60px";
+            ChessPlay.style.paddingBottom = "60px";
+            ChessPlay.style.margin = "0 auto";
+            ChessPlay.style.display = "flex";
+            ChessPlay.style.flexWrap = "wrap";
+
+            function generChess() {
+                var line = document.createElement("div");
+                line.className = "line";
+                chess.append(line);
+                line.style.width = "60px";
+                line.style.height = "60px";
+                line.style.margin = "0px";
+                line.style.padding = "0px";
+                line.style.fontSize = "40px";
+                line.style.fontWeight = "bold";
+                line.style.textAlign = "center";
+
+            }
+            window.onload = generChess;
+
+            for (var n = 0; (n != 121); n++) {
+                window.onload = generChess();
+            };
+
+            var numline = document.querySelectorAll(".line");
+            for (var i = 0; (i < numline.length); i++) {
+                var c;
+                if (i % 2 == 0) {
+                    c = "white";
+                } else {
+                    c = "black";
+                }
+                numline[i].style.background = c;
+
+                for (var f = 89; (f < 108); f++) {
+                    numline[f].style.color = "white";
+                }
+                for (var f = 0; (f < 22); f++) {
+                    numline[f].style.background = "white";
+                }
+                for (var f = 110; (f < 121); f++) {
+                    numline[f].style.background = "white";
+                }
+
+                numline[22].style.background = "white";
+                numline[33].style.background = "white";
+                numline[44].style.background = "white";
+                numline[55].style.background = "white";
+                numline[66].style.background = "white";
+                numline[77].style.background = "white";
+                numline[88].style.background = "white";
+                numline[99].style.background = "white";
+                numline[31].style.background = "white";
+                numline[32].style.background = "white";
+                numline[42].style.background = "white";
+                numline[43].style.background = "white";
+                numline[53].style.background = "white";
+                numline[54].style.background = "white";
+                numline[64].style.background = "white";
+                numline[65].style.background = "white";
+                numline[75].style.background = "white";
+                numline[76].style.background = "white";
+                numline[86].style.background = "white";
+                numline[87].style.background = "white";
+                numline[97].style.background = "white";
+                numline[98].style.background = "white";
+                numline[108].style.background = "white";
+                numline[109].style.background = "white";
+
+                numline[12].innerText = "A";
+                numline[13].innerText = "B";
+                numline[14].innerText = "C";
+                numline[15].innerText = "D";
+                numline[16].innerText = "E";
+                numline[17].innerText = "F";
+                numline[18].innerText = "G";
+                numline[19].innerText = "H";
+                numline[111].innerText = "A";
+                numline[112].innerText = "B";
+                numline[113].innerText = "C";
+                numline[114].innerText = "D";
+                numline[115].innerText = "E";
+                numline[116].innerText = "F";
+                numline[117].innerText = "G";
+                numline[118].innerText = "H";
+
+                numline[97].style.color = "black";
+                numline[99].style.color = "black";
+
+                numline[22].innerText = "1";
+                numline[33].innerText = "2";
+                numline[44].innerText = "3";
+                numline[55].innerText = "4";
+                numline[66].innerText = "5";
+                numline[77].innerText = "6";
+                numline[88].innerText = "7";
+                numline[99].innerText = "8";
+                numline[31].innerText = "1";
+                numline[42].innerText = "2";
+                numline[53].innerText = "3";
+                numline[64].innerText = "4";
+                numline[75].innerText = "5";
+                numline[86].innerText = "6";
+                numline[97].innerText = "7";
+                numline[108].innerText = "8";
+            }
+
+        </script>
+    </div>
+</body>
+
+</html>
